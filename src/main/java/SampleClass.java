@@ -63,9 +63,28 @@ public class SampleClass {
     public boolean b;
 
     //    implement a custom .equals(SampleClass other){} method here.
+    public boolean equals(Object o){
+        if(o == this){
+            return true;
+        }
+        if(!(o instanceof SampleClass)){
+            return false;
+        }
+        SampleClass other = (SampleClass) o;
+        boolean intEquals = this.a == other.a;
+      boolean booleanEquals = (this.b && other.b)
+        || (this.b == (other.b));
+
+        return intEquals && booleanEquals;
+
+        // return b;
+    }
 
 
     //    implement a custom .toString(){} method here.
+    public String toString(){
+        return "This is an overriden string" + a + b;
+    } 
 
     
 }
